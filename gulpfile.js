@@ -17,7 +17,7 @@ var paths = {
   sassionic: ['scss/ionic/*.scss'],
   templates: ['templates/**.html', 'partials/**.html'],
   src: ['src/**.js'],
-  lib: ['lib/ionic/js/ionic.bundle.min.js']
+  lib: ['lib/ionic/js/ionic.bundle.min.js', 'lib/angular-translate/angular-translate.min.js', 'lib/angular-translate-loader-static-files/angular-translate-loader-static-files.min.js']
 };
 
 var task = {};

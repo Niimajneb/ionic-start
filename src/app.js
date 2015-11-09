@@ -6,6 +6,7 @@
 // 'starter.controllers' is found in controllers.src
 angular.module('starter', [
   'ionic',
+  'pascalprecht.translate',
   'starter.controllers',
   'starter.templates'
 ])
@@ -26,9 +27,8 @@ angular.module('starter', [
     });
   })
 
-  .config(function ($stateProvider, $urlRouterProvider) {
+  .config(function ($stateProvider, $urlRouterProvider, $translateProvider) {
     $stateProvider
-
       .state('app', {
         url: '/app',
         abstract: true,
@@ -47,4 +47,13 @@ angular.module('starter', [
       });
     // if none of the above states are matched, use this as the fallback
     $urlRouterProvider.otherwise('/app/home');
+
+    $translateProvider
+      .useStaticFilesLoader({
+        prefix: 'lang/',
+        suffix: '.json'
+      })
+      .preferredLanguage('fr')
+      .fallbackLanguage('fr')
+      .useSanitizeValueStrategy('sanitizeParameters');
   });
